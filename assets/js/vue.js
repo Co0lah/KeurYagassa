@@ -59,7 +59,7 @@ const Home = {
         setLikeCookie() {
             document.addEventListener('input', () => {
                 // LAISSER LE TEMPS AU LIKE DE S'INCREMENTER, DONC ASYNC AVEC SETIMEOUT
-                setTimeout(()=> {
+                setTimeout(() => {
                     $cookies.set('like', JSON.stringify(this.liked))
                 }, 300)
                 // METHOD JSON SUR ARRAY LIKED
@@ -67,7 +67,7 @@ const Home = {
         },
         addToCart(product) {
             // CHECK IS PRODUIT DEJA DANS ARRAY LIKED
-            for (let i = 0; i < this.cart.length; i++){
+            for (let i = 0; i < this.cart.length; i++) {
                 // SI ID PRODUIT DEJA DANS CART
                 if (this.cart[i].id === product.id) {
                     return this.cart[i].quantity++
@@ -89,7 +89,7 @@ const Home = {
         // ID RECUPERE AU CLIC QU'ON VA TRANSMETTRE A CARTREMOVEITEM 
         cartMinusOne(product, id) {
             // DONC SI QQT = 1 PROCHAIN CLIC SERA LA SUPPRESSION  
-            if ( product.quantity == 1 ) {
+            if (product.quantity == 1) {
                 this.cartRemoveItem(id)
             } else {
                 product.quantity = product.quantity - 1
